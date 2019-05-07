@@ -1,0 +1,193 @@
+/*
+This is a good layout for a mobile-first CSS template.
+Following this flow will minimize the number of styles you need to write and will ensure you are thinking, designing and developing mobile-first.
+Most of your styles get written like standard CSS, but for your mobile presentation. Generally speaking, a good mobile presention will stretch out nicely for larger screens.
+
+Sometimes, when we stretch out to larger screens, we need to make minor tweaks for the larger devices -- you can make these tweaks in the tablet media query, or if the issue exists on desktop only, the desktop media query.
+You will find this is far easier than the opposite task of using CSS to cram your desktop experience into a mobile device.
+*/
+/*********************************************************************
+ LOADS IN A NICE RESET TO ENSURE ALL BROWSERS HAVE THE SAME BASE STYLES
+*********************************************************************/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css');
+
+/*********************************************************************
+  YOUR MOBILE/BASE STYLES GO HERE
+*********************************************************************/
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    /* Sets default font-size to 16px, ensuring 1em = 16px; */
+    font-size: 16px;
+    font-family: 'Helvetica', sans-serif;
+}
+
+h1 {
+    font-family: 'Helvetica', sans-serif;
+    text-align: center;
+    padding: 10px 20px 0px 15px;
+    font-size: 2.5em;
+    color: #46658C;
+}
+
+h2 {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+figure {
+    margin: auto;
+    max-width: 900px;
+}
+
+/* by adding this, we make sure that the image is always seen as 100% even if browswer window gets narrower. */
+figure img {
+    width: 100%;
+}
+
+figcaption {
+    color: gray;
+    padding-top: 5px;
+    padding-right: 0px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    /* shortcut for the 4 lines of padding */
+    /* padding: 5px 0px 20px 0px; */
+}
+
+span {
+    font-weight: bold;
+    font-family: "Helvetica", sans-serif;
+}
+
+.byline {
+    text-transform: uppercase;
+}
+
+p {
+    font-family: 'Georgia', sans-serif;
+    font-weight: lighter;
+}
+
+#items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+    grid-gap: 10px;
+    border-width: 2.5px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.filter {
+    margin: 0 auto;
+}
+
+.item {
+    padding: 5px 10px 0px 10px;
+    display: block;
+    border-style: solid;
+    border-width: 2.5px;
+    /*box-sizing: border-box;*/
+    border-color: black;
+    padding: 5px;
+    text-align: center;
+    display: none;
+}
+
+h3 {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 0px;
+    display: block;
+    font-size: 0.96em;
+    /*border-style: solid;
+    border-width: 2px;
+    /*border-color: black;*/
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.container .h1 {
+    max-width: 100px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.item.active {
+    display: block;
+}
+
+.item .img {
+    display: block;
+    width: 20%;
+    border-style: solid;
+    border-width: 2.5px;
+    border-color: black;
+}
+
+.item .img {
+    position: relative;
+}
+
+.item .img .low {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, .65);
+    color: #FFF;
+}
+
+select {
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-color: black;
+    padding-left: 3px;
+}
+
+.box {
+    padding: 0px 44px 20px 31px;
+}
+
+/*********************************************************************
+  YOUR TABLET/DESKTOP STYLES GO HERE
+*********************************************************************/
+@media(min-width: 681px) {
+
+    /* Any adjustments for tablets and larger go here.
+    Note these styles will be applied to anything 681px or larger -- so tablet AND desktop */
+    #items {
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    }
+
+    /*select {
+        text-align: center;
+        max-width: 800px;
+    }*/
+}
+
+/*********************************************************************
+  YOUR DESKTOP-ONLY STYLES GO HERE
+*********************************************************************/
+@media(min-width: 729px) {
+
+    /* Any adjustments for desktop and larger go here.
+    Note these styles will be applied to anything 729px or larger -- so desktop */
+    select {
+        width: 400px;
+        text-align: center;
+    }
+
+    */
+}
